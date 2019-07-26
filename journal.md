@@ -1,6 +1,11 @@
 
 # SDC Journal
 
+## 7/26/19
+
+Loaded 10M records into MariaDB and have tested the speed of individual queries.
+Documentation for this is in the [database](./database.md) file.
+
 ## 7/25/19
 
 Loaded 10M records into cassandra and have tested the speed of individual queries.
