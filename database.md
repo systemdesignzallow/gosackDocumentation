@@ -2,6 +2,34 @@
 
 ## MariaDB
 
+## Benchmarks
+
+### Query Average
+
+#### Maria DB
+
+![MariaDB Benchmarks](./mariaDBBenchmark.png)
+
+|Query #| Time |
+|-|------------|	
+|2|0.000672730s|	
+|4|0.000403200s|
+|5|0.000590920s|	
+|6|0.000709500s|
+|7|0.000623870s|	
+|8|0.000372220s|	
+|9|0.000366730s|	
+|10|0.000331450s|	
+|11|0.000989800s|
+|12|0.00072151s|	
+|13|0.00100831s|	
+|14|0.00038470s|
+
+|Average|
+|-|
+|597.9116667 µs|	
+|0.5979116667 ms|	
+
 ```BASH
 To start mysqld at boot time you have to copy
 support-files/mysql.server to the right place for your system
@@ -33,12 +61,24 @@ https://mariadb.org/get-involved/
 ```
 Message after MariaDB package installation.
 
-```BASH
+```SH
 systemctl start mariadb
 ```
 Start the mariadb service.
 
 Data goes in `/var/lib/mysql`
+
+```SQL
+SELECT * FROM homes\G
+```
+
+Pretty Print Output
+
+```SQL
+SELECT COUNT(*) FROM student;
+```
+2
+Count records in DB
 
 
 ### MariaDB Data Setup
@@ -47,7 +87,7 @@ Data goes in `/var/lib/mysql`
 mysql -u patrick -p
 ```
 
-get INTo shell
+Start Shell
 
 ```SQL
 CREATE DATABASE IF NOT EXISTS test;
@@ -201,7 +241,7 @@ Query example
 
 `EXPAND ON`
 
-Pretty P INT
+Pretty Print
 
 `TRACING ON`
 
@@ -277,6 +317,17 @@ eventual consistency
 
 Cassandra = AP
 PostgreSQL = CA
+
+artillery for hitting server to database
+
+
+max conncections on single port
+t2 large or bigger
+
+
+cassandra
+mariadb
+
 
 <http://cassandra.apache.org/download/>
 
