@@ -30,6 +30,9 @@
 |597.9116667 µs|	
 |0.5979116667 ms|	
 
+### Records in MariaDB
+![Record Count](./mariaRecordCount.png)
+
 ```BASH
 To start mysqld at boot time you have to copy
 support-files/mysql.server to the right place for your system
@@ -117,7 +120,8 @@ CREATE TABLE IF NOT EXISTS homes (
    rooms INT,
    stories INT,
    floorSize INT,
-   spaces TEXT,
+   spaces TEXT,1
+   
    houseDescription TEXT,
    houseType TEXT,
    yearBuilt INT,
@@ -162,6 +166,27 @@ Show performance of last queries.
 
 
 ## Cassandra
+
+|Query #| Time |
+|-|------------|	
+|2|8565|	
+|4|5021|
+|5|4437|	
+|6|3951|
+|7|1790|	
+|8|1820|	
+|9|3754|	
+|10|4159|	
+|11|4047|
+|12|3759|	
+|13|3858|	
+|14|3665|
+
+|Average|
+|-|
+|4068.833 µs|	
+
+
 
 * `cluster` is a container for `keyspaces`
 * `keyspace` is the outermost container for data.
@@ -279,8 +304,6 @@ CREATE TABLE homes(
 ```
 
 ## General Cassandra Use Case Notes
-
-[ ] generate 10M records with node
 
 cassandra - gossip
 eventual consistency
