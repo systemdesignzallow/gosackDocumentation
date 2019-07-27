@@ -1,6 +1,14 @@
 
 # SDC Journal
 
+## 7/27/19
+* Chose MariaDB based on metrics and research.
+* Wrote database defense.
+* Got basic querying working through nodejs.
+* Have service working with MariaDB backend.
+* Rebuilt data with address field due to mistake in generation.
+* Looking at artillery for stress testing
+
 ## 7/26/19
 
 Loaded 10M records into MariaDB and have tested the speed of individual queries.
