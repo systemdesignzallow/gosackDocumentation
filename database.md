@@ -277,7 +277,7 @@ Tracing on
 ```sql
 CREATE TABLE homes(
    appliances TEXT,
- INTeriorFeatures TEXT,
+   interiorFeatures TEXT,
    construction TEXT,
    roof TEXT,
    exterior TEXT,
