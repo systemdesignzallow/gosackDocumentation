@@ -7,6 +7,8 @@
  * Created Artillery script and seperated helper functions for benchmarking.
  * Revised routes for proper error handling.
  * Abstracted fake script for arbitrary record generation, output path. Added commandline arguments and export.
+ * Made CRUD stubs to complete tomorrow.
+ * Added Jest for tests to write tomorrow.
 
 ## 7/27/19
 * Chose MariaDB based on metrics and research.
@@ -14,7 +16,7 @@
 * Got basic querying working through nodejs.
 * Have service working with MariaDB backend.
 * Rebuilt data with address field due to mistake in generation.
-* Looking at artillery for stress testing
+* Looking at artillery for stress testing.
 
 ## 7/26/19
 
