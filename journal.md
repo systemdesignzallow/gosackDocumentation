@@ -1,6 +1,13 @@
 
 # SDC Journal
 
+## 7/29/19
+ * Incorperated comments into code from team lead.
+ * Abstracted functionality for server into model.
+ * Created Artillery script and seperated helper functions for benchmarking.
+ * Revised routes for proper error handling.
+ * Abstracted fake script for arbitrary record generation, output path. Added commandline arguments and export.
+
 ## 7/27/19
 * Chose MariaDB based on metrics and research.
 * Wrote database defense.
