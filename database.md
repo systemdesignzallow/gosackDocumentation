@@ -1,36 +1,31 @@
 # Database Notes
 
-## MariaDB
-
-## Benchmarks
-
-### Query Average
-
-#### Maria DB
+## Maria DB
 
 ![MariaDB Benchmarks](./mariaDBBenchmark.png)
 
-|Query #| Time |
-|-|------------|
-|2|0.000672730s|
-|4|0.000403200s|
-|5|0.000590920s|
-|6|0.000709500s|
-|7|0.000623870s|
-|8|0.000372220s|
-|9|0.000366730s|
-|10|0.000331450s|
-|11|0.000989800s|
-|12|0.00072151s|
-|13|0.00100831s|
-|14|0.00038470s|
+| Query # | Time         |
+| ------- | ------------ |
+| 2       | 0.000672730s |
+| 4       | 0.000403200s |
+| 5       | 0.000590920s |
+| 6       | 0.000709500s |
+| 7       | 0.000623870s |
+| 8       | 0.000372220s |
+| 9       | 0.000366730s |
+| 10      | 0.000331450s |
+| 11      | 0.000989800s |
+| 12      | 0.00072151s  |
+| 13      | 0.00100831s  |
+| 14      | 0.00038470s  |
 
-|Average|
-|-|
-|597.9116667 µs|
-|0.5979116667 ms|	
+| Average         |
+| --------------- |
+| 597.9116667 µs  |
+| 0.5979116667 ms |
 
 ### Records in MariaDB
+
 ![Record Count](./mariaRecordCount.png)
 
 ```BASH
@@ -62,11 +57,13 @@ http://dev.mysql.com
 Consider joining MariaDB's strong and vibrant community:
 https://mariadb.org/get-involved/
 ```
+
 Message after MariaDB package installation.
 
 ```SH
 systemctl start mariadb
 ```
+
 Start the mariadb service.
 
 Data goes in `/var/lib/mysql`
@@ -80,9 +77,17 @@ Pretty Print Output
 ```SQL
 SELECT COUNT(*) FROM student;
 ```
-2
+
 Count records in DB
 
+### MariaDB Permissions
+
+```SQL
+GRANT ALL privileges ON `mydb`.* TO 'myuser'@localhost;
+FLUSH PRIVILEGES;
+```
+
+Add permissions to user when logged in as root
 
 ### MariaDB Data Setup
 
@@ -95,12 +100,13 @@ Start Shell
 ```SQL
 CREATE DATABASE IF NOT EXISTS test;
 ```
+
 Create database `test`
 
 ```SQL
 CREATE TABLE IF NOT EXISTS homes (
-  BookID INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
-  Title VARCHAR(100) NOT NULL, 
+  BookID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  Title VARCHAR(100) NOT NULL,
   SeriesID INT, AuthorID INT);
 ```
 
@@ -112,7 +118,7 @@ CREATE TABLE IF NOT EXISTS homes (
    roof TEXT,
    exterior TEXT,
    flooring TEXT,
-   homeId INT PRIMARY KEY,
+   homeId INT PRIMARY KEY AUTO_INCREMENT,
    homeAddress TEXT,
    price INT,
    beds INT,
@@ -120,8 +126,7 @@ CREATE TABLE IF NOT EXISTS homes (
    rooms INT,
    stories INT,
    floorSize INT,
-   spaces TEXT,1
-   
+   spaces TEXT,
    houseDescription TEXT,
    houseType TEXT,
    yearBuilt INT,
@@ -132,6 +137,7 @@ CREATE TABLE IF NOT EXISTS homes (
    daysListed INT,
    saves INT);
 ```
+
 Create table `homes`
 
 ```SQL
@@ -141,7 +147,7 @@ FIELDS TERMINATED BY ';';
 ```
 
 ```SQL
-LOAD DATA INFILE '/home/patrick/sdc/gosackService/sample-data/data/data.csv'
+LOAD DATA INFILE '/var/lib/mysql/test.csv'
 INTO TABLE homes
 FIELDS TERMINATED BY ';';
 ```
@@ -162,36 +168,31 @@ SHOW PROFILES;
 
 Show performance of last queries.
 
-
-
-
 ## Cassandra
 
-|Query #| Time |
-|-|------------|	
-|2|8565|	
-|4|5021|
-|5|4437|	
-|6|3951|
-|7|1790|	
-|8|1820|	
-|9|3754|	
-|10|4159|	
-|11|4047|
-|12|3759|	
-|13|3858|	
-|14|3665|
+| Query # | Time |
+| ------- | ---- |
+| 2       | 8565 |
+| 4       | 5021 |
+| 5       | 4437 |
+| 6       | 3951 |
+| 7       | 1790 |
+| 8       | 1820 |
+| 9       | 3754 |
+| 10      | 4159 |
+| 11      | 4047 |
+| 12      | 3759 |
+| 13      | 3858 |
+| 14      | 3665 |
 
-|Average|
-|-|
-|4068.833 µs|	
+| Average     |
+| ----------- |
+| 4068.833 µs |
 
-
-
-* `cluster` is a container for `keyspaces`
-* `keyspace` is the outermost container for data.
-* `replication factor` the amount of nodes that will have duplicates of the data.
-* `column family` roughly a table from a relational database
+- `cluster` is a container for `keyspaces`
+- `keyspace` is the outermost container for data.
+- `replication factor` the amount of nodes that will have duplicates of the data.
+- `column family` roughly a table from a relational database
 
 ## `bash` Cassandra Helpers
 
@@ -308,49 +309,48 @@ CREATE TABLE homes(
 cassandra - gossip
 eventual consistency
 
-* column oriented database
-* key value pairs
-* does not require empty positions to be filled with anything saving space
-* fault tolerant, data is replicated to multiple nodes
-* fast ***
-* decentralized, no single p INT of failure
-* scalable
-* elastic, adding machines makes more performance
-* no joins
-* horizontal scaling to hit higher RPS
+- column oriented database
+- key value pairs
+- does not require empty positions to be filled with anything saving space
+- fault tolerant, data is replicated to multiple nodes
+- fast \*\*\*
+- decentralized, no single p INT of failure
+- scalable
+- elastic, adding machines makes more performance
+- no joins
+- horizontal scaling to hit higher RPS
 
-|Relational Database | NoSQL Database|
-|-------------------|----------------|
-|Handles data coming in low velocity|Handles data coming in high velocity|
-|Data arrive from one or few locations|Data arrive from many locations|
-|Manages structured data|Manages structured unstructured and semi-structured data.|
-|Supports complex transactions (with joins)|Supports simple transactions
-|single p INT of failure with failover|No single p INT of failure
-|Handles data in the moderate volume.|Handles data in very high volume
-|Centralized deployments|Decentralized deployments
-|Transactions written in one location|Transaction written in many locations
-|Gives read scalability|Gives both read and write scalability
-|Deployed in vertical fashion|Deployed in Horizontal fashion
+| Relational Database                        | NoSQL Database                                            |
+| ------------------------------------------ | --------------------------------------------------------- |
+| Handles data coming in low velocity        | Handles data coming in high velocity                      |
+| Data arrive from one or few locations      | Data arrive from many locations                           |
+| Manages structured data                    | Manages structured unstructured and semi-structured data. |
+| Supports complex transactions (with joins) | Supports simple transactions                              |
+| single p INT of failure with failover      | No single p INT of failure                                |
+| Handles data in the moderate volume.       | Handles data in very high volume                          |
+| Centralized deployments                    | Decentralized deployments                                 |
+| Transactions written in one location       | Transaction written in many locations                     |
+| Gives read scalability                     | Gives both read and write scalability                     |
+| Deployed in vertical fashion               | Deployed in Horizontal fashion                            |
 
 ## CAP Theorem
+
 ![CAP Theorem](CAPTheoremDatabase.PNG)
-* Available
-* Consistant
-* Partition Tolerant
+
+- Available
+- Consistant
+- Partition Tolerant
 
 Cassandra = AP
 PostgreSQL = CA
 
 artillery for hitting server to database
 
-
 max conncections on single port
 t2 large or bigger
 
-
 cassandra
 mariadb
-
 
 <http://cassandra.apache.org/download/>
 
@@ -370,9 +370,9 @@ Cassandra Query language: Cassandra provides query language that is similar like
 
 ## Random Thoughts
 
-* need database for search optimised document store
+- need database for search optimised document store
 
-* Redis for caching
+- Redis for caching
 
 Have leafs for increased read speed.
 <https://mariadb.org/download/>

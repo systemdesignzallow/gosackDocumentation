@@ -1,31 +1,49 @@
-
 # SDC Journal
 
+## 7/31/19
+
+- Got axios HTTP requests working due to problem with async logic.
+- Got Jest integration tests working with async axios requests.
+- f
+
+## 7/30/19
+
+- Housekeeping (ESLint for all files to conform to AirBnB Style Guide), file renaming, etc.
+- createHouse query.
+- updateHouse query.
+- deleteHouse query.
+- created query helper functions.
+- updateHouse working.
+- deleteHouse working.
+- createHouse working.
+
 ## 7/29/19
- * Incorperated comments into code from team lead.
- * Abstracted functionality for server into model.
- * Created Artillery script and seperated helper functions for benchmarking.
- * Revised routes for proper error handling.
- * Abstracted fake script for arbitrary record generation, output path. Added commandline arguments and export.
- * Made CRUD stubs to complete tomorrow.
- * Added Jest for tests to write tomorrow.
+
+- Incorperated comments into code from team lead.
+- Abstracted functionality for server into model.
+- Created Artillery script and seperated helper functions for benchmarking.
+- Revised routes for proper error handling.
+- Abstracted fake script for arbitrary record generation, output path. Added commandline arguments and export.
+- Made CRUD stubs to complete tomorrow.
+- Added Jest for tests to write tomorrow.
 
 ## 7/27/19
-* Chose MariaDB based on metrics and research.
-* Wrote database defense.
-* Got basic querying working through nodejs.
-* Have service working with MariaDB backend.
-* Rebuilt data with address field due to mistake in generation.
-* Looking at artillery for stress testing.
+
+- Chose MariaDB based on metrics and research.
+- Wrote database defense.
+- Got basic querying working through nodejs.
+- Have service working with MariaDB backend.
+- Rebuilt data with address field due to mistake in generation.
+- Looking at artillery for stress testing.
 
 ## 7/26/19
 
 Loaded 10M records into MariaDB and have tested the speed of individual queries.
 Documentation for this is in the [database](./database.md) file.
-Completed benchmarking, but realized that I did not make an apples to apples 
+Completed benchmarking, but realized that I did not make an apples to apples
 comparison as I was running Cassandra on the Windows Subsystem for Linux
-and I ran MariaDB on an Arch Linux install. The performance of MariaDB was 
-7x faster and I find that a bit fishy... 
+and I ran MariaDB on an Arch Linux install. The performance of MariaDB was
+7x faster and I find that a bit fishy...
 Documentation for the benchmarks are in the [database](./database.md) file.
 
 ## 7/25/19
