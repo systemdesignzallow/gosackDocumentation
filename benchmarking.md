@@ -1,6 +1,14 @@
 # Benchmarking Notes
 
-## New Relic Results
+## New Relic Proxy Results
+
+![NewRelicScreenshot](./newRelicProxyResults.png)
+New Relic Post Results
+
+![ArtilleryCommands](./proxyArtillery.png)
+Artillery Commands
+
+## New Relic Service Results
 
 ![NewRelicScreenshot](./newRelicPost.png)
 New Relic Post Results

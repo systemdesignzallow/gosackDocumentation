@@ -1,5 +1,12 @@
 # SDC Journal
 
+## 8/1/19
+
+- Proposed final mariaDB merge request.
+- Added environment variables.
+- All tests pass after changes, this was basically the first time I was really glad I had those tests. Totally see the value now...
+-
+
 ## 7/31/19
 
 - Got axios HTTP requests working due to problem with async logic.
