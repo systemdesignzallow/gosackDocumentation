@@ -4,7 +4,12 @@
 
 - Got axios HTTP requests working due to problem with async logic.
 - Got Jest integration tests working with async axios requests.
-- f
+- Benchmarked Service POST requests.
+- Have satisfactory test coverage.
+  - ![SatisfactoryCodeCoverage](./codeCoverage.png)
+- Change SQL requests to guard against injections
+- Changed status code handling on server.
+- Wrote test for record generation performance.
 
 ## 7/30/19
 
