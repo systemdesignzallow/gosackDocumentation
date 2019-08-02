@@ -64,6 +64,12 @@ Message after MariaDB package installation.
 systemctl start mariadb
 ```
 
+```SH
+mysql -u root -p$(MARIADB_ROOT_PASSWORD) < bootstrap.sql
+```
+
+import data from shell
+
 Start the mariadb service.
 
 Data goes in `/var/lib/mysql`
@@ -102,13 +108,6 @@ CREATE DATABASE IF NOT EXISTS test;
 ```
 
 Create database `test`
-
-```SQL
-CREATE TABLE IF NOT EXISTS homes (
-  BookID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  Title VARCHAR(100) NOT NULL,
-  SeriesID INT, AuthorID INT);
-```
 
 ```SQL
 CREATE TABLE IF NOT EXISTS homes (

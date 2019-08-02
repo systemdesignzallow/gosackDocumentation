@@ -5,7 +5,9 @@
 - Proposed final mariaDB merge request.
 - Added environment variables.
 - All tests pass after changes, this was basically the first time I was really glad I had those tests. Totally see the value now...
--
+- Got proxy working
+- learned some crazy docker stuff
+- learned some crazy terraform stuff
 
 ## 7/31/19
 
