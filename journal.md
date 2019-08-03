@@ -1,5 +1,15 @@
 # SDC Journal
 
+## 8/2/19
+
+- Wrote working dockerfile for DB.
+- Wrote working bootstrap script for EC2.
+- Got Docker container working locally
+- Got Docker container working on EC2 instance.
+- Very motivated for Terraform.
+- Diagnosed another problem with my fake script.
+- Uploaded big data file to S3 for eventual download.
+
 ## 8/1/19
 
 - Proposed final mariaDB merge request.

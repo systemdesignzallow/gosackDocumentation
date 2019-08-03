@@ -146,7 +146,7 @@ FIELDS TERMINATED BY ';';
 ```
 
 ```SQL
-LOAD DATA INFILE '/var/lib/mysql/test.csv'
+LOAD DATA INFILE '/var/lib/mysql/small.csv'
 INTO TABLE homes
 FIELDS TERMINATED BY ';';
 ```
