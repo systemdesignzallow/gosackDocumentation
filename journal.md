@@ -4,6 +4,7 @@
 
 - Did a whole lot of messing around deploying the service.
 - Learned a lot, accomplished little.
+- Well, I got the service hosted on EC2, so I have that going for me.
 
 ## 8/2/19
 
