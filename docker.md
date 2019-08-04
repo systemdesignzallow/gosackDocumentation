@@ -4,6 +4,29 @@
 
 https://phoenix-sei.slack.com/archives/DKJ4FGF62/p1564711822000400
 
+## Shell Script
+
+```sh
+#!/bin/bash
+git clone https://github.com/systemdesignzallow/gosackService
+cd gosackService
+git checkout docker
+
+echo 'LOCAL_SERVICE_SERVER_PORT=6001' >> .env
+echo 'NODE_ENV="docker"' >> .env
+echo 'NEW_RELIC="ab77636d6d1a81e91b0b1326702da84ae52124a9"' >> .env
+echo 'DOCKER_DB_HOST="54.190.198.143"' >> .env
+echo 'DOCKER_DB_PORT=3306' >> .env
+echo 'DOCKER_DB_USER="root"' >> .env
+echo 'DOCKER_DB_PW="mypassword"' >> .env
+echo 'DOCKER_DB="gosackDB"' >> .env
+
+sudo docker pull node:11.15.0
+sudo docker build -t gosackservice .
+# HOLY CRAP THAT PORT STUFF IS IMPORTANT!
+sudo docker run -itd -p 80:6001 --name newservice gosackservice
+```
+
 ## Helpful Commands
 
 `docker logs $container_id`
@@ -14,6 +37,22 @@ see all containers
 
 `docker rm [name]`
 remove container
+
+`docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id`
+
+get ip for docker container
+
+## Commands for gosackService container
+
+`docker pull node:11.15.0`
+`docker build -t gosackservice .`
+`sudo docker run -itd -p 6001:6001 --name newservice gosackservice`
+No interactive shell
+`sudo docker run -it -p 6001:6001 --name newservice gosackservice /bin/bash`
+with shell
+`sudo docker exec -it newservice /bin/bash`
+
+## Commands for gosackDB container
 
 `docker pull mariadb/server:10.3`
 `docker build --build-arg MARIADB_ROOT_PASSWORD=mypassword -t gosackdb .`

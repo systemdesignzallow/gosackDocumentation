@@ -1,5 +1,10 @@
 # SDC Journal
 
+## 8/3/19
+
+- Did a whole lot of messing around deploying the service.
+- Learned a lot, accomplished little.
+
 ## 8/2/19
 
 - Wrote working dockerfile for DB.
