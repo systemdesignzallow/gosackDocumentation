@@ -1,5 +1,17 @@
 # Benchmarking Notes
 
+## AWS Results
+
+### New Relic
+
+![NewRelicScreenshot](./newRelicServiceAWS.png)
+New Relic Post Results
+
+### Arillery Commands and Results
+
+![ArtilleryCommands](./artilleryServiceAWS.png)
+Artillery Commands
+
 ## New Relic Proxy Results
 
 ![NewRelicScreenshot](./newRelicProxyResults.png)

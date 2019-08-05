@@ -1,5 +1,10 @@
 # SDC Journal
 
+## 8/4/19
+
+- Stress tested default service on AWS.
+
+
 ## 8/3/19
 
 - Did a whole lot of messing around deploying the service.
