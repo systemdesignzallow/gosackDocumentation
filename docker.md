@@ -29,10 +29,7 @@ sudo docker run -itd -p 80:6001 --name newservice gosackservice
 
 ## Docker images
 
-sudo docker login
-sudo docker tag gosackservice pgosack/gosackservice
-sudo docker push pgosack/gosackservice
-sudo docker pull pgosack/gosackservice
+[Good Resource for Docker Commit](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html)
 
 ## Helpful Commands
 
@@ -57,7 +54,7 @@ get ip for docker container
 No interactive shell
 `sudo docker run -it -p 6001:6001 --name newservice gosackservice /bin/bash`
 with shell
-`sudo docker exec -it newservice /bin/bash`
+ekauqquake69
 
 sudo docker pull pgosack/gosackservice
 
