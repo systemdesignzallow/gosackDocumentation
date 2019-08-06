@@ -27,6 +27,13 @@ sudo docker build -t gosackservice .
 sudo docker run -itd -p 80:6001 --name newservice gosackservice
 ```
 
+## Docker images
+
+sudo docker login
+sudo docker tag gosackservice pgosack/gosackservice
+sudo docker push pgosack/gosackservice
+sudo docker pull pgosack/gosackservice
+
 ## Helpful Commands
 
 `docker logs $container_id`
@@ -51,6 +58,8 @@ No interactive shell
 `sudo docker run -it -p 6001:6001 --name newservice gosackservice /bin/bash`
 with shell
 `sudo docker exec -it newservice /bin/bash`
+
+sudo docker pull pgosack/gosackservice
 
 ## Commands for gosackDB container
 

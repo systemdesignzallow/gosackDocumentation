@@ -1,9 +1,18 @@
 # SDC Journal
 
+## 8/5/19
+
+- Got all services in containers
+- Pushed a service image to DockerHub
+- Lots of bugfixes
+- Ran into an issue where the image wouldn't build on the instance anymore, hence above.
+- Had fun with some qnarly security issues, realized I had https disabled.
+- Finally benchmarked the proxy.
+- Learned that everything takes far more time than I think it should.
+
 ## 8/4/19
 
 - Stress tested default service on AWS.
-
 
 ## 8/3/19
 
