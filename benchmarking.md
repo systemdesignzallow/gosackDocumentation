@@ -1,5 +1,13 @@
 # Benchmarking Notes
 
+## EC2 Service Results with Loader.io
+
+![NewRelic/Loader.io](./loaderio-newrelic.png)
+New Relic EC2 Service Get Results Loaded by Loader.io
+
+![Loader.io](./loaderio.png)
+New Relic EC2 Service Get Results Loader.io Trends
+
 ## EC2 Proxy Results
 
 ![NewRelicScreenshot](./proxyEC2NewRelic.png)
